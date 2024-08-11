@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.3.10.47" id="DataBindings"
+             SeparateXMLFiles="false" Package="erpsolfms.erpsolfmsview" ClientType="Generic">
+  <pageMap>
+    <page path="/AR_0047.jsf" usageId="erpsolfms_erpsolfmsview_AR_0047PageDef"/>
+    <page path="/WEB-INF/ERPSOLFMSBTF.xml#ERPSOLFMSBTF@ExecuteQueryFMSTransaction"
+          usageId="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_ExecuteWithParamsPageDef"/>
+    <page path="/ERPSolFMSMain.jsf" usageId="erpsolfms_erpsolfmsview_ERPSolFMSMainPageDef"/>
+    <page path="/WEB-INF/ERPSOLFMSBTF.xml#ERPSOLFMSBTF@RollbackBeformFormFMS"
+          usageId="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_RollbackPageDef"/>
+    <page path="/AR_0047_SEARCH.jsf" usageId="erpsolfms_erpsolfmsview_AR_0047_SEARCHPageDef"/>
+    <page path="/WEB-INF/ERPSOLFMSBTF.xml#ERPSOLFMSBTF@RollbackCloseFormFMS"
+          usageId="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_RollbackPageDef1"/>
+    <page path="/AR_0005.jsf" usageId="erpsolfms_erpsolfmsview_AR_0005PageDef"/>
+    <page path="/GL_0134.jsf" usageId="erpsolfms_erpsolfmsview_GL_0134PageDef"/>
+    <page path="/WEB-INF/ERPSOLFMSBTF.xml#ERPSOLFMSBTF@ExecuteWithParamsReportFMS"
+          usageId="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_ExecuteWithParamsPageDef1"/>
+    <page path="/WEB-INF/ERPSOLFMSBTF.xml#ERPSOLFMSBTF@ExeWithParaExecuteWithParamsFMS"
+          usageId="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_ExecuteWithParamsPageDef11"/>
+    <page path="/WEB-INF/ERPSOLFMSBTF.xml#ERPSOLFMSBTF@doSetERPSolReportDefault"
+          usageId="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_doSetERPSolReportDefaultPageDef"/>
+    <page path="/AR_0005_SEARCH.jsf" usageId="erpsolfms_erpsolfmsview_AR_0005_SEARCHPageDef"/>
+    <page path="/WEB-INF/ERPSOLFMSBTF.xml#ERPSOLFMSBTF@ExecuteWithParamsReportDettailFMS"
+          usageId="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_ExecuteWithParamsPageDef111"/>
+    <page path="/AR_0056.jsf" usageId="erpsolfms_erpsolfmsview_AR_0056PageDef"/>
+    <page path="/WEB-INF/ERPSOLFMSBTF.xml#ERPSOLFMSBTF@ExecuteWithParamsReverseFMS"
+          usageId="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_ExecuteWithParamsPageDef1111"/>
+    <page path="/WEB-INF/ERPSOLFMSBTF.xml#ERPSOLFMSBTF@doSetERPSolReportAR_0056"
+          usageId="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_doSetERPSolReportDefault1PageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="erpsolfms_erpsolfmsview_AR_0047PageDef" path="erpsolfms.erpsolfmsview.pageDefs.AR_0047PageDef"/>
+    <page id="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_ExecuteWithParamsPageDef"
+          path="erpsolfms.erpsolfmsview.pageDefs.ERPSOLFMSBTF_ERPSOLFMSBTF_ExecuteWithParamsPageDef"/>
+    <page id="erpsolfms_erpsolfmsview_ERPSolFMSMainPageDef"
+          path="erpsolfms.erpsolfmsview.pageDefs.ERPSolFMSMainPageDef"/>
+    <page id="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_RollbackPageDef"
+          path="erpsolfms.erpsolfmsview.pageDefs.ERPSOLFMSBTF_ERPSOLFMSBTF_RollbackPageDef"/>
+    <page id="erpsolfms_erpsolfmsview_AR_0047_SEARCHPageDef"
+          path="erpsolfms.erpsolfmsview.pageDefs.AR_0047_SEARCHPageDef"/>
+    <page id="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_RollbackPageDef1"
+          path="erpsolfms.erpsolfmsview.pageDefs.ERPSOLFMSBTF_ERPSOLFMSBTF_RollbackPageDef1"/>
+    <page id="erpsolfms_erpsolfmsview_AR_0005PageDef" path="erpsolfms.erpsolfmsview.pageDefs.AR_0005PageDef"/>
+    <page id="erpsolfms_erpsolfmsview_GL_0134PageDef" path="erpsolfms.erpsolfmsview.pageDefs.GL_0134PageDef"/>
+    <page id="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_ExecuteWithParamsPageDef1"
+          path="erpsolfms.erpsolfmsview.pageDefs.ERPSOLFMSBTF_ERPSOLFMSBTF_ExecuteWithParamsPageDef1"/>
+    <page id="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_ExecuteWithParamsPageDef11"
+          path="erpsolfms.erpsolfmsview.pageDefs.ERPSOLFMSBTF_ERPSOLFMSBTF_ExecuteWithParamsPageDef11"/>
+    <page id="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_doSetERPSolReportDefaultPageDef"
+          path="erpsolfms.erpsolfmsview.pageDefs.ERPSOLFMSBTF_ERPSOLFMSBTF_doSetERPSolReportDefaultPageDef"/>
+    <page id="erpsolfms_erpsolfmsview_AR_0005_SEARCHPageDef"
+          path="erpsolfms.erpsolfmsview.pageDefs.AR_0005_SEARCHPageDef"/>
+    <page id="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_ExecuteWithParamsPageDef111"
+          path="erpsolfms.erpsolfmsview.pageDefs.ERPSOLFMSBTF_ERPSOLFMSBTF_ExecuteWithParamsPageDef111"/>
+    <page id="erpsolfms_erpsolfmsview_AR_0056PageDef" path="erpsolfms.erpsolfmsview.pageDefs.AR_0056PageDef"/>
+    <page id="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_ExecuteWithParamsPageDef1111"
+          path="erpsolfms.erpsolfmsview.pageDefs.ERPSOLFMSBTF_ERPSOLFMSBTF_ExecuteWithParamsPageDef1111"/>
+    <page id="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_doSetERPSolReportDefault1PageDef"
+          path="erpsolfms.erpsolfmsview.pageDefs.ERPSOLFMSBTF_ERPSOLFMSBTF_doSetERPSolReportDefault1PageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="ERPSolFMSAppModuleDataControl" Package="erpsolfms.erpsolfmsmodel.erpsolfmsam"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="ERPSolFMSAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="ERPSolTempAppModuleDataControl" Package="erpsoltemp.erpsoltempmodel.erpsoltempam"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="ERPSolTempAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

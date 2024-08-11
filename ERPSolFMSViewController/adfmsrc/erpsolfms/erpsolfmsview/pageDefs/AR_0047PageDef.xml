@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="AR_0047PageDef"
+                Package="erpsolfms.erpsolfmsview.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="ReceiptMasterControlCRUD" RangeSize="25" DataControl="ERPSolFMSAppModuleDataControl"
+              id="ReceiptMasterControlCRUDIterator"/>
+    <iterator Binds="ReceiptDetailControlDetCRUD" RangeSize="25" DataControl="ERPSolFMSAppModuleDataControl"
+              id="ReceiptDetailControlDetCRUDIterator"/>
+  </executables>
+  <bindings>
+    <listOfValues IterBinding="ReceiptMasterControlCRUDIterator" StaticList="false" Uses="LovtxtCustomerName"
+                  id="txtCustomerName"/>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="Customerid">
+      <AttrNames>
+        <Item Value="Customerid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="Locationid">
+      <AttrNames>
+        <Item Value="Locationid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="Remarks">
+      <AttrNames>
+        <Item Value="Remarks"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ReceiptMasterControlCRUDIterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="ReceiptMasterControlCRUDIterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="ERPSolFMSAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPSolFMSAppModuleDataControl"/>
+    <action IterBinding="ReceiptMasterControlCRUDIterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="ReceiptMasterControlCRUDIterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="RefVoucherNo">
+      <AttrNames>
+        <Item Value="RefVoucherNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="ReceiptNo">
+      <AttrNames>
+        <Item Value="ReceiptNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="DocDate">
+      <AttrNames>
+        <Item Value="DocDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="ChequeNo">
+      <AttrNames>
+        <Item Value="ChequeNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="ChequeDate">
+      <AttrNames>
+        <Item Value="ChequeDate"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues IterBinding="ReceiptMasterControlCRUDIterator" StaticList="false" Uses="LovtxtBankBranchName"
+                  id="txtBankBranchName"/>
+    <tree IterBinding="ReceiptDetailControlDetCRUDIterator" id="ReceiptDetailControlDetCRUD">
+      <nodeDefinition DefName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptDetailControlView"
+                      Name="ReceiptDetailControlDetCRUD0">
+        <AttrNames>
+          <Item Value="Lineno"/>
+          <Item Value="ReceiptNo"/>
+          <Item Value="Customerid"/>
+          <Item Value="txtSalesPersonName"/>
+          <Item Value="Salespersonid"/>
+          <Item Value="FcurrTaxAmount"/>
+          <Item Value="FcurrAmount"/>
+          <Item Value="txtCustomerName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="ReceiptDetailControlDetCRUDIterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="ReceiptDetailControlDetCRUDIterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="ReceiptMode">
+      <AttrNames>
+        <Item Value="ReceiptMode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="ReceiptDate">
+      <AttrNames>
+        <Item Value="ReceiptDate"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="doSuperviseControlReceipt" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="doSuperviseControlReceipt" IsViewObjectMethod="true"
+                  DataControl="ERPSolFMSAppModuleDataControl"
+                  InstanceName="data.ERPSolFMSAppModuleDataControl.ReceiptMasterControlCRUD"
+                  ReturnName="data.ERPSolFMSAppModuleDataControl.methodResults.doSuperviseControlReceipt_ERPSolFMSAppModuleDataControl_ReceiptMasterControlCRUD_doSuperviseControlReceipt_result"/>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="Submit">
+      <AttrNames>
+        <Item Value="Submit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="txtSumReceiptAmount">
+      <AttrNames>
+        <Item Value="txtSumReceiptAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="Companyid">
+      <AttrNames>
+        <Item Value="Companyid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="Salespersonid">
+      <AttrNames>
+        <Item Value="Salespersonid"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

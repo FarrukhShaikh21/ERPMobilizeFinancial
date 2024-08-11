@@ -1,0 +1,354 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:document title="AR_0005.jsf" id="d1">
+    <af:messages id="m1"/>
+    <af:form id="f1">
+      <af:popup childCreation="deferred" autoCancel="disabled" id="p1" contentDelivery="lazyUncached">
+        <af:dialog id="d2" title="Do you want to Supervise this transaction? (#{bindings.NoteCode.inputValue})"
+                   dialogListener="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolArNoteDialogConfirm}" type="yesNo">
+          <f:facet name="buttonBar"/>
+        </af:dialog>
+      </af:popup>
+      <af:pageTemplate viewId="/ERPSolutionTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
+        <f:facet name="erptempmain">
+          <af:panelHeader text=" " id="ph1" partialTriggers="::d2 b2 b1 b6 b5">
+            <f:facet name="context"/>
+            <f:facet name="menuBar"/>
+            <f:facet name="toolbar"/>
+            <f:facet name="legend"/>
+            <f:facet name="info"/>
+            <af:spacer width="10" height="10" id="s1"/>
+            <af:panelGridLayout id="pgl3">
+              <af:gridRow id="gr3">
+                <af:gridCell id="gc5" halign="stretch" valign="middle" styleClass="ERPSolFormEntryAreaHeader">
+                  <af:panelGridLayout id="pgl4">
+                    <af:gridRow height="30px" id="gr1">
+                      <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1" valign="middle">
+                        <af:outputText value="Master Information" id="ot1" styleClass="ERPSolFormEntryAreaFont"/>
+                      </af:gridCell>
+                    </af:gridRow>
+                  </af:panelGridLayout>
+                </af:gridCell>
+              </af:gridRow>
+              <af:gridRow height="auto" id="gr2" marginTop="10px">
+                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4" halign="stretch">
+                  <af:panelBox id="pb1" showDisclosure="false"
+                               inlineStyle="border-color:#b8d6f3; outline-width:thin; border-width:thin thin thin thin;">
+                    <f:facet name="toolbar">
+                      <af:toolbar id="t1">
+                        <af:button actionListener="#{bindings.doSuperviseARNoteMaster.execute}"
+                                   text="doSuperviseARNoteMaster"
+                                   disabled="#{!bindings.doSuperviseARNoteMaster.enabled}" id="b11" rendered="false"/>
+                        <af:button text="Close Form" id="b10" action="ACT-ERP-EXIT-FORM"
+                                   icon="#{resource['images:imgExitForm.png']}" iconPosition="top"/>
+                        <af:button text="Search" id="b12" action="ERP-ACT-AR-0005-SEARCH"
+                                   icon="#{resource['images:imgFind.png']}" iconPosition="top"/>
+                        <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                   disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b8"
+                                   icon="#{resource['images:imgPrevious.png']}" iconPosition="top"/>
+                        <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                   disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b7"
+                                   icon="#{resource['images:imgNext.png']}" iconPosition="top"/>
+                        <af:button actionListener="#{bindings.Delete.execute}" text="Delete Note"
+                                   disabled="#{pageFlowScope.ERPSolTempBean.LERPSolAllowDelete=='N'  || bindings.Submit.inputValue=='Y'}" id="b2"
+                                   icon="#{resource['images:imgDelete.png']}" iconPosition="top"/>
+                        <af:button actionListener="#{bindings.CreateInsert.execute}" text="New Note"
+                                   disabled="#{pageFlowScope.ERPSolTempBean.LERPSolAllowAdd=='N'}" id="b1"
+                                   icon="#{resource['images:imgAdd.png']}" iconPosition="top"/>
+                        <af:button actionListener="#{bindings.Rollback.execute}" text="Undo Changes" immediate="true"
+                                   id="b6" disabled="#{bindings.Submit.inputValue=='Y'}"
+                                   icon="#{resource['images:imgUndo.png']}" iconPosition="top">
+                          <af:resetActionListener/>
+                        </af:button>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save Transaction" id="b5"
+                                   disabled="#{bindings.Submit.inputValue=='Y'}"
+                                   icon="#{resource['images:imgSave.png']}" iconPosition="top"/>
+                        <af:spacer width="50" height="10" id="s6"/>
+                        <af:button text="Supervise Transaction" id="b9"
+                                   visible="#{pageFlowScope.ERPSolTempBean.LERPSolAllowSubmit=='Y'}"
+                                   disabled="#{pageFlowScope.ERPSolTempBean.LERPSolAllowSubmit=='N' || bindings.Submit.inputValue=='Y'}"
+                                   icon="#{resource['images:imgSupervise.png']}" iconPosition="top">
+                          <af:showPopupBehavior popupId="::p1" triggerType="action"/>
+                        </af:button>
+                      </af:toolbar>
+                    </f:facet>
+                    <af:panelGridLayout id="pgl5">
+                      <af:gridRow height="30px" id="gr4">
+                        <af:gridCell marginStart="5px" width="15%" id="gc2" valign="middle">
+                          <af:outputLabel value="#{bindings.NoteCode.hints.label}" id="ol12"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="35%" id="gc3" valign="middle">
+                          <af:inputText value="#{bindings.Submit.inputValue}" label="#{bindings.Submit.hints.label}"
+                                        required="#{bindings.Submit.hints.mandatory}"
+                                        columns="#{bindings.Submit.hints.displayWidth}"
+                                        maximumLength="#{bindings.Submit.hints.precision}"
+                                        shortDesc="#{bindings.Submit.hints.tooltip}" id="it11" rendered="false">
+                            <f:validator binding="#{bindings.Submit.validator}"/>
+                          </af:inputText>
+                          <af:inputText value="#{bindings.NoteCode.inputValue}" label="#{bindings.NoteCode.hints.label}"
+                                        required="#{bindings.NoteCode.hints.mandatory}"
+                                        columns="#{bindings.NoteCode.hints.displayWidth}"
+                                        maximumLength="#{bindings.NoteCode.hints.precision}"
+                                        shortDesc="#{bindings.NoteCode.hints.tooltip}" id="it12" simple="true"
+                                        readOnly="true">
+                            <f:validator binding="#{bindings.NoteCode.validator}"/>
+                          </af:inputText>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="15%" id="gc6" valign="middle">
+                          <af:outputLabel value="#{bindings.EntryDate.hints.label}" id="ol7"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc7" valign="middle">
+                          <af:inputDate value="#{bindings.EntryDate.inputValue}"
+                                        label="#{bindings.EntryDate.hints.label}"
+                                        required="#{bindings.EntryDate.hints.mandatory}"
+                                        columns="#{bindings.EntryDate.hints.displayWidth}"
+                                        shortDesc="#{bindings.EntryDate.hints.tooltip}" id="id1" simple="true"
+                                        autoSubmit="true" readOnly="#{bindings.NoteCode.inputValue!=null}">
+                            <f:validator binding="#{bindings.EntryDate.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.EntryDate.format}"/>
+                          </af:inputDate>
+                        </af:gridCell>
+                      </af:gridRow>
+                      <af:gridRow height="30px" id="gr5">
+                        <af:gridCell marginStart="5px" width="15%" id="gc8" valign="middle">
+                          <af:outputLabel value="#{bindings.Locationid.hints.label}" id="ol1"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="35%" id="gc9" halign="stretch" valign="middle">
+                          <af:inputText value="#{bindings.Locationid.inputValue}"
+                                        label="#{bindings.Locationid.hints.label}"
+                                        required="#{bindings.Locationid.hints.mandatory}"
+                                        columns="#{bindings.Locationid.hints.displayWidth}"
+                                        maximumLength="#{bindings.Locationid.hints.precision}"
+                                        shortDesc="#{bindings.Locationid.hints.tooltip}" id="it4" readOnly="true"
+                                        simple="true">
+                            <f:validator binding="#{bindings.Locationid.validator}"/>
+                          </af:inputText>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="15%" id="gc10" valign="middle">
+                          <af:outputLabel value="#{bindings.DocTypeId.hints.label}" id="ol5"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc11" halign="stretch"
+                                     valign="middle">
+                          <af:selectOneChoice label="Label 1" id="soc1" value="#{bindings.DocTypeId.inputValue}"
+                                              simple="true" contentStyle="width:50%">
+                            <af:selectItem value="SDB" id="si1" label="Debit Note"/>
+                            <af:selectItem value="SCR" id="si2" label="Credit Note"/>
+                          </af:selectOneChoice>
+                        </af:gridCell>
+                      </af:gridRow>
+                      <af:gridRow height="30px" id="gr6">
+                        <af:gridCell marginStart="5px" width="15%" id="gc12" valign="middle">
+                          <af:outputLabel value="#{bindings.txtCustomerName.hints.label}" id="ol2"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="35%" id="gc13" halign="stretch" valign="middle">
+                          <af:inputComboboxListOfValues id="iclov1"
+                                                        popupTitle="Search and Select: #{bindings.txtCustomerName.hints.label}"
+                                                        value="#{bindings.txtCustomerName.inputValue}"
+                                                        label="#{bindings.txtCustomerName.hints.label}"
+                                                        model="#{bindings.txtCustomerName.listOfValuesModel}"
+                                                        required="#{bindings.txtCustomerName.hints.mandatory}"
+                                                        columns="#{bindings.txtCustomerName.hints.displayWidth}"
+                                                        shortDesc="#{bindings.txtCustomerName.hints.tooltip}"
+                                                        simple="true" autoSubmit="true">
+                            <f:validator binding="#{bindings.txtCustomerName.validator}"/>
+                            <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedCustomerValues}"/>
+                          </af:inputComboboxListOfValues>
+                          <af:spacer width="10" height="10" id="s2"/>
+                          <af:outputText value="#{bindings.Customerid.inputValue}" id="ot2" noWrap="true"
+                                         partialTriggers="iclov1"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="15%" id="gc14" valign="middle">
+                          <af:outputLabel value="#{bindings.txtSalesPersonName.hints.label}" id="ol6"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc15" valign="middle"
+                                     halign="stretch">
+                          <af:inputComboboxListOfValues id="iclov2"
+                                                        popupTitle="Search and Select: #{bindings.txtSalesPersonName.hints.label}"
+                                                        value="#{bindings.txtSalesPersonName.inputValue}"
+                                                        label="#{bindings.txtSalesPersonName.hints.label}"
+                                                        model="#{bindings.txtSalesPersonName.listOfValuesModel}"
+                                                        required="#{bindings.txtSalesPersonName.hints.mandatory}"
+                                                        columns="#{bindings.txtSalesPersonName.hints.displayWidth}"
+                                                        shortDesc="#{bindings.txtSalesPersonName.hints.tooltip}"
+                                                        simple="true" contentStyle="width:100%"
+                                                        partialTriggers="iclov1">
+                            <f:validator binding="#{bindings.txtSalesPersonName.validator}"/>
+                            <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedSalesPersonValues}"/>
+                          </af:inputComboboxListOfValues>
+                        </af:gridCell>
+                      </af:gridRow>
+                      <af:gridRow height="30px" id="gr8">
+                        <af:gridCell id="gc20" width="15%" valign="middle">
+                          <af:outputLabel value="#{bindings.RefVoucher.hints.label}" id="ol4"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="35%" id="gc21" halign="stretch" valign="middle">
+                          <af:inputText value="#{bindings.RefVoucher.inputValue}"
+                                        label="#{bindings.RefVoucher.hints.label}"
+                                        required="#{bindings.RefVoucher.hints.mandatory}"
+                                        columns="#{bindings.RefVoucher.hints.displayWidth}"
+                                        maximumLength="#{bindings.RefVoucher.hints.precision}"
+                                        shortDesc="#{bindings.RefVoucher.hints.tooltip}" id="it1" simple="true">
+                            <f:validator binding="#{bindings.RefVoucher.validator}"/>
+                          </af:inputText>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="15%" id="gc22" valign="middle"/>
+                        <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc23" valign="middle"/>
+                      </af:gridRow>
+                      <af:gridRow height="30px" marginBottom="5px" id="gr9">
+                        <af:gridCell marginStart="5px" width="15%" id="gc24" valign="middle">
+                          <af:outputLabel value="#{bindings.Remarks.hints.label}" id="ol3"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="75%" id="gc25" columnSpan="3" rowSpan="1"
+                                     halign="stretch" valign="middle">
+                          <af:inputText value="#{bindings.Remarks.inputValue}" label="#{bindings.Remarks.hints.label}"
+                                        required="#{bindings.Remarks.hints.mandatory}"
+                                        columns="#{bindings.Remarks.hints.displayWidth}"
+                                        maximumLength="#{bindings.Remarks.hints.precision}"
+                                        shortDesc="#{bindings.Remarks.hints.tooltip}" id="it8" simple="true"
+                                        contentStyle="width:100%">
+                            <f:validator binding="#{bindings.Remarks.validator}"/>
+                          </af:inputText>
+                        </af:gridCell>
+                      </af:gridRow>
+                    </af:panelGridLayout>
+                  </af:panelBox>
+                </af:gridCell>
+              </af:gridRow>
+            </af:panelGridLayout>
+            <af:panelGridLayout id="pgl1">
+              <af:gridRow id="gr10">
+                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc28"
+                             styleClass="ERPSolFormEntryAreaHeader" halign="stretch" valign="stretch">
+                  <af:panelGridLayout id="pgl2">
+                    <af:gridRow marginTop="5px" height="30px" marginBottom="5px" id="gr12">
+                      <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc26" halign="stretch"
+                                   valign="stretch">
+                        <af:outputText value="Detail Information" id="ot6" styleClass="ERPSolFormEntryAreaFont"/>
+                      </af:gridCell>
+                    </af:gridRow>
+                  </af:panelGridLayout>
+                </af:gridCell>
+              </af:gridRow>
+              <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr11">
+                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc27" halign="stretch">
+                  <af:panelCollection id="pc1" styleClass="AFStretchWidth" featuresOff="viewMenu detach">
+                    <f:facet name="menus"/>
+                    <f:facet name="toolbar">
+                      <af:toolbar id="t3">
+                        <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Add Note Line"
+                                   disabled="#{bindings.Submit.inputValue=='Y'}" id="b3"/>
+                        <af:button actionListener="#{bindings.Delete1.execute}" text="Delete Note Line"
+                                   disabled="#{bindings.Submit.inputValue=='Y'}" id="b4"/>
+                      </af:toolbar>
+                    </f:facet>
+                    <f:facet name="statusbar"/>
+                    <af:table value="#{bindings.ArNoteDetailDetCRUD.collectionModel}" var="row"
+                              rows="#{bindings.ArNoteDetailDetCRUD.rangeSize}"
+                              emptyText="#{bindings.ArNoteDetailDetCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.ArNoteDetailDetCRUD.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.ArNoteDetailDetCRUD.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.ArNoteDetailDetCRUD.rangeSize}" id="t2"
+                              partialTriggers="::b4 ::b3" autoHeightRows="5" scrollPolicy="page">
+                      <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.label}" id="c1" width="120"
+                                 displayIndex="-1">
+                        <af:inputComboboxListOfValues id="itemRefIdId"
+                                                      popupTitle="Search and Select: #{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.label}"
+                                                      value="#{row.bindings.ItemRefId.inputValue}"
+                                                      model="#{row.bindings.ItemRefId.listOfValuesModel}"
+                                                      required="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.mandatory}"
+                                                      columns="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.displayWidth}"
+                                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.tooltip}"
+                                                      autoSubmit="true">
+                          <f:validator binding="#{row.bindings.ItemRefId.validator}"/>
+                          <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedModelValues}"/>
+                        </af:inputComboboxListOfValues>
+                      </af:column>
+                      <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.label}" id="c2"
+                                 width="200">
+                        <af:inputText value="#{row.bindings.txtItemName.inputValue}"
+                                      label="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.label}"
+                                      required="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.mandatory}"
+                                      columns="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.displayWidth}"
+                                      maximumLength="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.precision}"
+                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.tooltip}" id="it2"
+                                      readOnly="true" partialTriggers="itemRefIdId">
+                          <f:validator binding="#{row.bindings.txtItemName.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.txtCOADescription.label}" id="c3"
+                                 width="200">
+                        <af:inputComboboxListOfValues id="txtCOADescriptionId"
+                                                      popupTitle="Search and Select: #{bindings.ArNoteDetailDetCRUD.hints.txtCOADescription.label}"
+                                                      value="#{row.bindings.txtCOADescription.inputValue}"
+                                                      model="#{row.bindings.txtCOADescription.listOfValuesModel}"
+                                                      required="#{bindings.ArNoteDetailDetCRUD.hints.txtCOADescription.mandatory}"
+                                                      columns="#{bindings.ArNoteDetailDetCRUD.hints.txtCOADescription.displayWidth}"
+                                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.txtCOADescription.tooltip}"
+                                                      autoSubmit="true" contentStyle="width:100%">
+                          <f:validator binding="#{row.bindings.txtCOADescription.validator}"/>
+                          <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedCOAValues}"/>
+                        </af:inputComboboxListOfValues>
+                      </af:column>
+                      <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.GlCode.label}" id="c4" width="200">
+                        <af:inputText value="#{row.bindings.GlCode.inputValue}"
+                                      label="#{bindings.ArNoteDetailDetCRUD.hints.GlCode.label}"
+                                      required="#{bindings.ArNoteDetailDetCRUD.hints.GlCode.mandatory}"
+                                      columns="#{bindings.ArNoteDetailDetCRUD.hints.GlCode.displayWidth}"
+                                      maximumLength="#{bindings.ArNoteDetailDetCRUD.hints.GlCode.precision}"
+                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.GlCode.tooltip}" id="it3"
+                                      readOnly="true" partialTriggers="txtCOADescriptionId">
+                          <f:validator binding="#{row.bindings.GlCode.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.txtCostCenterDescription.label}"
+                                 id="c7" width="200" displayIndex="-1">
+                        <af:inputComboboxListOfValues id="txtCostCenterDescriptionId"
+                                                      popupTitle="Search and Select: #{bindings.ArNoteDetailDetCRUD.hints.txtCostCenterDescription.label}"
+                                                      value="#{row.bindings.txtCostCenterDescription.inputValue}"
+                                                      model="#{row.bindings.txtCostCenterDescription.listOfValuesModel}"
+                                                      required="#{bindings.ArNoteDetailDetCRUD.hints.txtCostCenterDescription.mandatory}"
+                                                      columns="#{bindings.ArNoteDetailDetCRUD.hints.txtCostCenterDescription.displayWidth}"
+                                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.txtCostCenterDescription.tooltip}"
+                                                      autoSubmit="true">
+                          <f:validator binding="#{row.bindings.txtCostCenterDescription.validator}"/>
+                          <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedCostCenterValues}"/>
+                        </af:inputComboboxListOfValues>
+                      </af:column>
+                      <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.Costcenter.label}" id="c5">
+                        <af:inputText value="#{row.bindings.Costcenter.inputValue}"
+                                      label="#{bindings.ArNoteDetailDetCRUD.hints.Costcenter.label}"
+                                      required="#{bindings.ArNoteDetailDetCRUD.hints.Costcenter.mandatory}"
+                                      columns="#{bindings.ArNoteDetailDetCRUD.hints.Costcenter.displayWidth}"
+                                      maximumLength="#{bindings.ArNoteDetailDetCRUD.hints.Costcenter.precision}"
+                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.Costcenter.tooltip}" id="it5"
+                                      readOnly="true" partialTriggers="txtCostCenterDescriptionId">
+                          <f:validator binding="#{row.bindings.Costcenter.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.FcurrAmount.label}" id="c6">
+                        <af:inputText value="#{row.bindings.FcurrAmount.inputValue}"
+                                      label="#{bindings.ArNoteDetailDetCRUD.hints.FcurrAmount.label}"
+                                      required="#{bindings.ArNoteDetailDetCRUD.hints.FcurrAmount.mandatory}"
+                                      columns="#{bindings.ArNoteDetailDetCRUD.hints.FcurrAmount.displayWidth}"
+                                      maximumLength="#{bindings.ArNoteDetailDetCRUD.hints.FcurrAmount.precision}"
+                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.FcurrAmount.tooltip}" id="it6">
+                          <f:validator binding="#{row.bindings.FcurrAmount.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.ArNoteDetailDetCRUD.hints.FcurrAmount.format}"/>
+                        </af:inputText>
+                      </af:column>
+                    </af:table>
+                  </af:panelCollection>
+                </af:gridCell>
+              </af:gridRow>
+            </af:panelGridLayout>
+          </af:panelHeader>
+        </f:facet>
+        <f:facet name="erptempleft"/>
+      </af:pageTemplate>
+    </af:form>
+    <f:facet name="metaContainer"/>
+  </af:document>
+</f:view>

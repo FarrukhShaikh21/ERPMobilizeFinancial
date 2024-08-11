@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="ERPSolFMSMain.jsf" id="d1">
+        <af:form id="f1">
+            <af:pageTemplate viewId="/ERPSolutionTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
+                <f:facet name="erptempmain">
+                    <af:panelBox text="Financial Management System" id="pb1" showDisclosure="false">
+                        <f:facet name="toolbar">
+                            <af:toolbar id="t1" flex="5">
+                                <af:link id="l1" partialSubmit="true" icon="#{resource['images:imgHome.png']}"
+                                         action="ACT-ERP-GOTO-MODLE-SELECTION"/>
+                            </af:toolbar>
+                        </f:facet>
+                        <af:image id="i1" source="#{resource['images:imgFinance.png']}"/>
+                    </af:panelBox>
+                </f:facet>
+                <f:facet name="erptempleft"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

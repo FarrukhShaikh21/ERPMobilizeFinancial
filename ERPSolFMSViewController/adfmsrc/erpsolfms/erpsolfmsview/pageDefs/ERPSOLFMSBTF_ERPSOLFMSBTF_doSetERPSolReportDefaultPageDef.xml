@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47"
+                id="ERPSOLFMSBTF_ERPSOLFMSBTF_doSetERPSolReportDefaultPageDef"
+                Package="erpsolfms.erpsolfmsview.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="doSetERPSolReportDefault" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="doSetERPSolReportDefault" IsViewObjectMethod="true"
+                  DataControl="ERPSolFMSAppModuleDataControl"
+                  InstanceName="data.ERPSolFMSAppModuleDataControl.VwGLFinanceReportRO"
+                  ReturnName="data.ERPSolFMSAppModuleDataControl.methodResults.doSetERPSolReportDefault_ERPSolFMSAppModuleDataControl_VwGLFinanceReportRO_doSetERPSolReportDefault_result"/>
+  </bindings>
+</pageDefinition>

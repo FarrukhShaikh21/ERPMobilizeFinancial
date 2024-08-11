@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="AR_0056.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/ERPSolutionTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
+                <f:facet name="erptempmain">
+                    <af:panelFormLayout id="pfl1">
+                        <af:selectOneChoice value="#{bindings.Companyid.inputValue}" label="#{bindings.Companyid.label}"
+                                            required="#{bindings.Companyid.hints.mandatory}"
+                                            shortDesc="#{bindings.Companyid.hints.tooltip}" id="soc2" disabled="true"
+                                            contentStyle="width:220px">
+                            <f:selectItems value="#{bindings.Companyid.items}" id="si2"/>
+                            <f:validator binding="#{bindings.Companyid.validator}"/>
+                        </af:selectOneChoice>
+                        <af:inputComboboxListOfValues id="txtLocationNameId"
+                                                      popupTitle="Search and Select: #{bindings.txtLocationName.hints.label}"
+                                                      value="#{bindings.txtLocationName.inputValue}"
+                                                      label="#{bindings.txtLocationName.hints.label}"
+                                                      model="#{bindings.txtLocationName.listOfValuesModel}"
+                                                      required="#{bindings.txtLocationName.hints.mandatory}"
+                                                      columns="#{bindings.txtLocationName.hints.displayWidth}"
+                                                      shortDesc="#{bindings.txtLocationName.hints.tooltip}"
+                                                      disabled="true" contentStyle="width:200px">
+                            <f:validator binding="#{bindings.txtLocationName.validator}"/>
+                        </af:inputComboboxListOfValues>
+                        <af:selectOneChoice value="#{bindings.txtDoctypeId.inputValue}"
+                                            label="#{bindings.txtDoctypeId.label}"
+                                            required="#{bindings.txtDoctypeId.hints.mandatory}"
+                                            shortDesc="#{bindings.txtDoctypeId.hints.tooltip}" id="soc1"
+                                            autoSubmit="true" contentStyle="width:220px">
+                            <f:selectItems value="#{bindings.txtDoctypeId.items}" id="si1"/>
+                            <f:validator binding="#{bindings.txtDoctypeId.validator}"/>
+                        </af:selectOneChoice>
+                        <af:inputComboboxListOfValues id="txtDocumentIdId"
+                                                      popupTitle="Search and Select: #{bindings.txtDocumentId.hints.label}"
+                                                      value="#{bindings.txtDocumentId.inputValue}"
+                                                      label="#{bindings.txtDocumentId.hints.label}"
+                                                      model="#{bindings.txtDocumentId.listOfValuesModel}"
+                                                      required="#{bindings.txtDocumentId.hints.mandatory}"
+                                                      columns="#{bindings.txtDocumentId.hints.displayWidth}"
+                                                      shortDesc="#{bindings.txtDocumentId.hints.tooltip}"
+                                                      partialTriggers="soc1" contentStyle="width:200px"
+                                                      autoSubmit="true">
+                            <f:validator binding="#{bindings.txtDocumentId.validator}"/>
+                            <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedARUnsubmitDoc}"/>
+                        </af:inputComboboxListOfValues>
+                        <af:inputText value="#{bindings.txtDescription.inputValue}"
+                                      label="#{bindings.txtDescription.hints.label}"
+                                      required="#{bindings.txtDescription.hints.mandatory}"
+                                      columns="#{bindings.txtDescription.hints.displayWidth}"
+                                      maximumLength="#{bindings.txtDescription.hints.precision}"
+                                      shortDesc="#{bindings.txtDescription.hints.tooltip}"
+                                      partialTriggers="txtDocumentIdId soc1" id="it1" readOnly="true">
+                            <f:validator binding="#{bindings.txtDescription.validator}"/>
+                        </af:inputText>
+                        <af:button actionListener="#{bindings.doUnSubmitARRecord.execute}" text="Unsubmit"
+                                   disabled="#{!bindings.doUnSubmitARRecord.enabled}" id="b1"/>
+                    </af:panelFormLayout>
+                </f:facet>
+                <f:facet name="erptempleft"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>
