@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SoSalesPersonsReceiptDetailControlSalespersonIdLink"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  EntityAssociation="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.SoSalesPersonsReceiptDetailControlSalespersonIdAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="erpsolfms.erpsolfmsmodel.erpsolfmslink.SoSalesPersonsReceiptDetailControlSalespersonIdLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="SoSalesPersonsView"
+    Cardinality="1"
+    Source="true"
+    Owner="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SoSalesPersonsView">
+    <DesignTime>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="SoSalesPersonsView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SoSalesPersonsView.Salespersonid"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="ReceiptDetailControlView"
+    Cardinality="-1"
+    Owner="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptDetailControlView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="ReceiptDetailControlView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptDetailControlView.Salespersonid"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolfms.erpsolfmsmodel.ERPSolFMSModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="GL_0004PageDef"
+                Package="erpsolfms.erpsolfmsview.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="VoucherViewCRUD" RangeSize="25" DataControl="ERPSolFMSAppModuleDataControl"
+              id="VoucherViewCRUDIterator"/>
+    <iterator Binds="VoucherDetViewDetCRUD" RangeSize="25" DataControl="ERPSolFMSAppModuleDataControl"
+              id="VoucherDetViewDetCRUDIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="VoucherViewCRUDIterator" id="VoucherNo">
+      <AttrNames>
+        <Item Value="VoucherNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherViewCRUDIterator" id="VoucherDate">
+      <AttrNames>
+        <Item Value="VoucherDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="VoucherViewCRUDIterator" StaticList="false" Uses="LovVoucherType" id="VoucherType"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <listOfValues IterBinding="VoucherViewCRUDIterator" StaticList="false" Uses="LovtxtLocationName"
+                  id="txtLocationName"/>
+    <attributeValues IterBinding="VoucherViewCRUDIterator" id="txtGL_V_TYPE">
+      <AttrNames>
+        <Item Value="txtGL_V_TYPE"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherViewCRUDIterator" id="RefNo">
+      <AttrNames>
+        <Item Value="RefNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherViewCRUDIterator" id="ChequeDate">
+      <AttrNames>
+        <Item Value="ChequeDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherViewCRUDIterator" id="ChequeNo">
+      <AttrNames>
+        <Item Value="ChequeNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherViewCRUDIterator" id="Particulars">
+      <AttrNames>
+        <Item Value="Particulars"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="VoucherDetViewDetCRUDIterator" id="VoucherDetViewDetCRUD">
+      <nodeDefinition DefName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.VoucherDetView" Name="VoucherDetViewDetCRUD0">
+        <AttrNames>
+          <Item Value="txtGLCode"/>
+          <Item Value="txtGlDescription"/>
+          <Item Value="txtGLCodeCredit"/>
+          <Item Value="txtGLCodeCreditDescription"/>
+          <Item Value="txtCostCenterDescription"/>
+          <Item Value="txtCostCenter"/>
+          <Item Value="FcurrDebit"/>
+          <Item Value="FcurrCredit"/>
+          <Item Value="Narration"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

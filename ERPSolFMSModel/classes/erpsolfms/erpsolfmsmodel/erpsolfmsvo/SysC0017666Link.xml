@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SysC0017666Link"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  EntityAssociation="erpsolfms.erpsolfmsmodel.erpsolfmseo.SysC0017666Assoc">
+  <ViewLinkDefEnd
+    Name="ReceiptMasterControlView"
+    Cardinality="1"
+    Source="true"
+    Owner="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptMasterControlView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="ReceiptMasterControlView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_accessor" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptMasterControlView.ReceiptNo"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="ReceiptDetailControlView"
+    Cardinality="-1"
+    Owner="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptDetailControlView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="ReceiptDetailControlView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptDetailControlView.ReceiptNo"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

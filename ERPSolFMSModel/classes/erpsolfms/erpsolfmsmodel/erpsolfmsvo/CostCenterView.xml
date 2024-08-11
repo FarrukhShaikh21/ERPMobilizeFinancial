@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CostCenterView"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="CostCenter"
+    Entity="erpsolfms.erpsolfmsmodel.erpsolfmseo.CostCenter"/>
+  <ViewAttribute
+    Name="Ccregion"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ccregion"
+    EntityUsage="CostCenter"
+    AliasName="CCREGION"/>
+  <ViewAttribute
+    Name="CcsubLocation"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CcsubLocation"
+    EntityUsage="CostCenter"
+    AliasName="CCSUB_LOCATION"/>
+  <ViewAttribute
+    Name="Ccsubsidary"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ccsubsidary"
+    EntityUsage="CostCenter"
+    AliasName="CCSUBSIDARY"/>
+  <ViewAttribute
+    Name="OldAnalysisCode"
+    PrecisionRule="true"
+    EntityAttrName="OldAnalysisCode"
+    EntityUsage="CostCenter"
+    AliasName="OLD_ANALYSIS_CODE"/>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="CostCenter"
+    AliasName="DESCRIPTION"/>
+  <ViewLinkAccessor
+    Name="VoucherDetView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.CostCenterVoucherDetCostCenterLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

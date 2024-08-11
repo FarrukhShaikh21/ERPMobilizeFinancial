@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AllBankBranchesReceiptMasterControlBranchidLink"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  EntityAssociation="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.AllBankBranchesReceiptMasterControlBranchidAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="erpsolfms.erpsolfmsmodel.erpsolfmslink.AllBankBranchesReceiptMasterControlBranchidLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="AllBankBranchesView"
+    Cardinality="1"
+    Source="true"
+    Owner="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllBankBranchesView">
+    <DesignTime>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="AllBankBranchesView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllBankBranchesView.Branchid"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="ReceiptMasterControlView"
+    Cardinality="-1"
+    Owner="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptMasterControlView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="ReceiptMasterControlView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptMasterControlView.Branchid"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolfms.erpsolfmsmodel.ERPSolFMSModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

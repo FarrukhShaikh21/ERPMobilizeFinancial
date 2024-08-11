@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="VoucherDetView"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="AccVWChartOfAccountQVO"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VWChartOfAccountQVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVWCostCenterQVO"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VWCostCenterQVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovtxtGlDescription"
+    ListVOName="AccVWChartOfAccountQVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtGlDescription"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="txtGLCode"/>
+      <Item Value="GlbroadCategory"/>
+      <Item Value="GlcontrolAC"/>
+      <Item Value="GlnatureOfAC"/>
+      <Item Value="GlsubControlAC"/>
+      <Item Value="GlsubsidaryAC"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Description"/>
+      <Item Value="Glcode"/>
+      <Item Value="GlbroadCategory"/>
+      <Item Value="GlcontrolAC"/>
+      <Item Value="GlnatureOfAC"/>
+      <Item Value="GlsubControlAC"/>
+      <Item Value="GlsubsidaryAC"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+      <Item Value="Glcode"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtGLCodeCreditDescription"
+    ListVOName="AccVWChartOfAccountQVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtGLCodeCreditDescription"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="txtGLCode"/>
+      <Item Value="GlbroadCategory"/>
+      <Item Value="GlcontrolAC"/>
+      <Item Value="GlnatureOfAC"/>
+      <Item Value="GlsubControlAC"/>
+      <Item Value="GlsubsidaryAC"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Description"/>
+      <Item Value="Glcode"/>
+      <Item Value="GlbroadCategory"/>
+      <Item Value="GlcontrolAC"/>
+      <Item Value="GlnatureOfAC"/>
+      <Item Value="GlsubControlAC"/>
+      <Item Value="GlsubsidaryAC"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtCostCenterDescription"
+    ListVOName="AccVWCostCenterQVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtCostCenterDescription"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="txtCostCenterDescription"/>
+      <Item Value="Ccregion"/>
+      <Item Value="CcsubLocation"/>
+      <Item Value="Ccsubsidary"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Description"/>
+      <Item Value="Costcenterid"/>
+      <Item Value="Ccregion"/>
+      <Item Value="CcsubLocation"/>
+      <Item Value="Ccsubsidary"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+      <Item Value="Costcenterid"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="VoucherDet"
+    Entity="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherDet"/>
+  <ViewAttribute
+    Name="VoucherNo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="VoucherNo"
+    EntityUsage="VoucherDet"
+    AliasName="VOUCHER_NO"/>
+  <ViewAttribute
+    Name="VoucherType"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="VoucherType"
+    EntityUsage="VoucherDet"
+    AliasName="VOUCHER_TYPE"/>
+  <ViewAttribute
+    Name="LocCode"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LocCode"
+    EntityUsage="VoucherDet"
+    AliasName="LOC_CODE"/>
+  <ViewAttribute
+    Name="GlnatureOfAC"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GlnatureOfAC"
+    EntityUsage="VoucherDet"
+    AliasName="GLNATURE_OF_A_C"/>
+  <ViewAttribute
+    Name="GlbroadCategory"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GlbroadCategory"
+    EntityUsage="VoucherDet"
+    AliasName="GLBROAD_CATEGORY"/>
+  <ViewAttribute
+    Name="GlcontrolAC"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GlcontrolAC"
+    EntityUsage="VoucherDet"
+    AliasName="GLCONTROL_A_C"/>
+  <ViewAttribute
+    Name="GlsubControlAC"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GlsubControlAC"
+    EntityUsage="VoucherDet"
+    AliasName="GLSUB_CONTROL_A_C"/>
+  <ViewAttribute
+    Name="GlsubsidaryAC"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GlsubsidaryAC"
+    EntityUsage="VoucherDet"
+    AliasName="GLSUBSIDARY_A_C"/>
+  <ViewAttribute
+    Name="Ccregion"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ccregion"
+    EntityUsage="VoucherDet"
+    AliasName="CCREGION"/>
+  <ViewAttribute
+    Name="CcsubLocation"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CcsubLocation"
+    EntityUsage="VoucherDet"
+    AliasName="CCSUB_LOCATION"/>
+  <ViewAttribute
+    Name="Ccsubsidary"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ccsubsidary"
+    EntityUsage="VoucherDet"
+    AliasName="CCSUBSIDARY"/>
+  <ViewAttribute
+    Name="Debit"
+    PrecisionRule="true"
+    EntityAttrName="Debit"
+    EntityUsage="VoucherDet"
+    AliasName="DEBIT"/>
+  <ViewAttribute
+    Name="Credit"
+    PrecisionRule="true"
+    EntityAttrName="Credit"
+    EntityUsage="VoucherDet"
+    AliasName="CREDIT"/>
+  <ViewAttribute
+    Name="Quantity"
+    PrecisionRule="true"
+    EntityAttrName="Quantity"
+    EntityUsage="VoucherDet"
+    AliasName="QUANTITY"/>
+  <ViewAttribute
+    Name="Narration"
+    PrecisionRule="true"
+    EntityAttrName="Narration"
+    EntityUsage="VoucherDet"
+    AliasName="NARRATION"/>
+  <ViewAttribute
+    Name="SNo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SNo"
+    EntityUsage="VoucherDet"
+    AliasName="S_NO"/>
+  <ViewAttribute
+    Name="TrnLocCode"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TrnLocCode"
+    EntityUsage="VoucherDet"
+    AliasName="TRN_LOC_CODE"/>
+  <ViewAttribute
+    Name="OldGlcode"
+    PrecisionRule="true"
+    EntityAttrName="OldGlcode"
+    EntityUsage="VoucherDet"
+    AliasName="OLD_GLCODE"/>
+  <ViewAttribute
+    Name="NarrationRescue"
+    PrecisionRule="true"
+    EntityAttrName="NarrationRescue"
+    EntityUsage="VoucherDet"
+    AliasName="NARRATION_RESCUE"/>
+  <ViewAttribute
+    Name="FcurrDebit"
+    PrecisionRule="true"
+    EntityAttrName="FcurrDebit"
+    EntityUsage="VoucherDet"
+    AliasName="FCURR_DEBIT"/>
+  <ViewAttribute
+    Name="FcurrCredit"
+    PrecisionRule="true"
+    EntityAttrName="FcurrCredit"
+    EntityUsage="VoucherDet"
+    AliasName="FCURR_CREDIT"/>
+  <ViewAttribute
+    Name="NarrationRescue2"
+    PrecisionRule="true"
+    EntityAttrName="NarrationRescue2"
+    EntityUsage="VoucherDet"
+    AliasName="NARRATION_RESCUE_2"/>
+  <ViewAttribute
+    Name="Voucherseq"
+    PrecisionRule="true"
+    EntityAttrName="Voucherseq"
+    EntityUsage="VoucherDet"
+    AliasName="VOUCHERSEQ"/>
+  <ViewAttribute
+    Name="Voucherdetseq"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="Voucherdetseq"
+    EntityUsage="VoucherDet"
+    AliasName="VOUCHERDETSEQ"/>
+  <ViewAttribute
+    Name="txtGLCode"
+    PrecisionRule="true"
+    EntityAttrName="txtGLCode"
+    EntityUsage="VoucherDet"
+    AliasName="TXT_GLCODE"/>
+  <ViewAttribute
+    Name="txtGlDescription"
+    PrecisionRule="true"
+    EntityAttrName="txtGlDescription"
+    EntityUsage="VoucherDet"
+    AliasName="TXT_GL_DESCRIPTION"
+    LOVName="LovtxtGlDescription">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtGLCodeCredit"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtGLCodeCredit"
+    EntityUsage="VoucherDet"
+    AliasName="TXT_GLCODE_CREDIT"/>
+  <ViewAttribute
+    Name="txtGLCodeCreditDescription"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtGLCodeCreditDescription"
+    EntityUsage="VoucherDet"
+    AliasName="TXT_GLCODE_CREDIT_DESCRIPTION"
+    LOVName="LovtxtGLCodeCreditDescription">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtCostCenterDescription"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtCostCenterDescription"
+    EntityUsage="VoucherDet"
+    AliasName="TXT_COST_CENTER_DESCRIPTION"
+    LOVName="LovtxtCostCenterDescription">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtCostCenter"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtCostCenter"
+    EntityUsage="VoucherDet"
+    AliasName="TXT_COST_CENTER"/>
+  <ViewLinkAccessor
+    Name="VoucherView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.GlVoucherGlVoucherDetVoucherseqLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ChartOfAccView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.GlChartOfAccountVoucherDetChartOfAccountLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CostCenterView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.CostCenterVoucherDetCostCenterLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+</ViewObject>

@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ArNoteDetail"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="AR_NOTE_DETAIL"
+  AliasName="ArNoteDetail"
+  BindingStyle="OracleName"
+  RowClass="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteDetailImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <Attr Name="_superClass" Value="erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="SeqNo"
+    Precision="15"
+    ColumnName="SEQ_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.Integer"
+    ColumnType="VARCHAR2"
+    TableName="AR_NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="NoteCode"
+    Precision="20"
+    ColumnName="NOTE_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="AR_NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TaxCode"
+    ColumnName="TAX_CODE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="AR_NOTE_DETAIL"/>
+  <Attribute
+    Name="RefDocument"
+    Precision="15"
+    ColumnName="REF_DOCUMENT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="AR_NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Amount"
+    Precision="12"
+    Scale="2"
+    ColumnName="AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="AR_NOTE_DETAIL"/>
+  <Attribute
+    Name="Balance"
+    Precision="12"
+    Scale="2"
+    ColumnName="BALANCE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="AR_NOTE_DETAIL"/>
+  <Attribute
+    Name="Createdby"
+    Precision="15"
+    ColumnName="CREATEDBY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="AR_NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Modifiedby"
+    Precision="15"
+    ColumnName="MODIFIEDBY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="AR_NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="AR_NOTE_DETAIL"/>
+  <Attribute
+    Name="ModifiedDate"
+    ColumnName="MODIFIED_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="AR_NOTE_DETAIL"/>
+  <Attribute
+    Name="DocTypeId"
+    Precision="5"
+    ColumnName="DOC_TYPE_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="AR_NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="GlCode"
+    Precision="15"
+    ColumnName="GL_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="AR_NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Costcenter"
+    Precision="15"
+    ColumnName="COSTCENTER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="AR_NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Discountid"
+    Precision="15"
+    ColumnName="DISCOUNTID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="AR_NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Itemid"
+    Precision="15"
+    ColumnName="ITEMID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="AR_NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ItemRefId"
+    Precision="15"
+    ColumnName="ITEM_REF_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="AR_NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModelNo"
+    Precision="20"
+    ColumnName="MODEL_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="AR_NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DiscDescription"
+    Precision="50"
+    ColumnName="DISC_DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="AR_NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Glid"
+    ColumnName="GLID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="AR_NOTE_DETAIL"/>
+  <Attribute
+    Name="DisQty"
+    ColumnName="DIS_QTY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="AR_NOTE_DETAIL"/>
+  <Attribute
+    Name="OldGlcode"
+    Precision="15"
+    ColumnName="OLD_GLCODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="AR_NOTE_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FcurrAmount"
+    Precision="16"
+    Scale="6"
+    ColumnName="FCURR_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="AR_NOTE_DETAIL"/>
+  <Attribute
+    Name="Notedetailseq"
+    IsNotNull="true"
+    ColumnName="NOTEDETAILSEQ"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="AR_NOTE_DETAIL"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Notemasterseq"
+    IsNotNull="true"
+    ColumnName="NOTEMASTERSEQ"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="AR_NOTE_DETAIL"/>
+  <Attribute
+    Name="txtItemName"
+    Precision="80"
+    ColumnName="TXT_ITEM_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[InItems?.ModelNo]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteDetail.txtItemName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="Itemid"/>
+    </Dependencies>
+  </Attribute>
+  <AccessorAttribute
+    Name="ArNoteMaster"
+    Association="erpsolfms.erpsolfmsmodel.erpsolfmseo.FkArNoteDetNotemasterAssoc"
+    AssociationEnd="erpsolfms.erpsolfmsmodel.erpsolfmseo.FkArNoteDetNotemasterAssoc.ArNoteMaster"
+    AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmseo.FkArNoteDetNotemasterAssoc.ArNoteDetail"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="InItems"
+    Association="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.InItemsARNoteDetailItemIdAssoc"
+    AssociationEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.InItemsARNoteDetailItemIdAssoc.InItems"
+    AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.InItemsARNoteDetailItemIdAssoc.ArNoteDetail"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkArNoteDetail"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_AR_NOTE_DETAIL"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteDetail.Notedetailseq"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkArNDDiscountid">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C0015897"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_AR_N_D_DISCOUNTID"/>
+      <Attr Name="_isDisabledConstraint" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteDetail.Discountid"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkArNoteDetNotemaster">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_AR_NOTE_MASTER"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_AR_NOTE_DET_NOTEMASTER"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteDetail.Notemasterseq"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0017004">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_GLID_ARDISCOUNTGLCODE"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SYS_C0017004"/>
+      <Attr Name="_isDisabledConstraint" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteDetail.Glid"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_ArNoteDetail">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="XPKIN_ITEMS"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_AR_NOTE_DETAIL"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteDetail.Itemid"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolfms.erpsolfmsmodel.ERPSolFMSModelBundle"/>
+  </ResourceBundle>
+</Entity>

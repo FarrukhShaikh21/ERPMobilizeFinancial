@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SysC0016796Assoc"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Voucher1"
+    Cardinality="1"
+    Source="true"
+    Owner="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Voucher1"/>
+      <Attr Name="_foreignKey" Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.SysC0015522"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.VoucherNo"/>
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.VoucherType"/>
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.LocCode"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="VoucherDet1"
+    Cardinality="-1"
+    Owner="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherDet">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="VoucherDet1"/>
+      <Attr Name="_foreignKey" Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherDet.SysC0016796"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherDet.VoucherNo"/>
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherDet.VoucherType"/>
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherDet.LocCode"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

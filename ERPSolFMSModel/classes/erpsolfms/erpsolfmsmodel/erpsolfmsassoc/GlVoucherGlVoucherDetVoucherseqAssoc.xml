@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="GlVoucherGlVoucherDetVoucherseqAssoc"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Voucher2"
+    Cardinality="1"
+    Source="true"
+    Owner="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Voucher2"/>
+      <Attr Name="_foreignKey" Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.UnqVoucher"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.Voucherseq"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="VoucherDet2"
+    Cardinality="-1"
+    Owner="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherDet">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="VoucherDet2"/>
+      <Attr Name="_foreignKey" Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherDet.fk_VoucherDet"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherDet.Voucherseq"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>
