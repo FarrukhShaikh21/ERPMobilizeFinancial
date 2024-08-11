@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CostCenterVoucherDetCostCenterLink"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  EntityAssociation="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.CostCenterVoucherDetCostCenterAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="erpsolfms.erpsolfmsmodel.erpsolfmslink.CostCenterVoucherDetCostCenterLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="CostCenterView"
+    Cardinality="1"
+    Source="true"
+    Owner="erpsolfms.erpsolfmsmodel.erpsolfmsvo.CostCenterView">
+    <DesignTime>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="CostCenterView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmsvo.CostCenterView.Ccregion"/>
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmsvo.CostCenterView.CcsubLocation"/>
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmsvo.CostCenterView.Ccsubsidary"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="VoucherDetView"
+    Cardinality="-1"
+    Owner="erpsolfms.erpsolfmsmodel.erpsolfmsvo.VoucherDetView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="VoucherDetView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmsvo.VoucherDetView.Ccregion"/>
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmsvo.VoucherDetView.CcsubLocation"/>
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmsvo.VoucherDetView.Ccsubsidary"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolfms.erpsolfmsmodel.ERPSolFMSModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

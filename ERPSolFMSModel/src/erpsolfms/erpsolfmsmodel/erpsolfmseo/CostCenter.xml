@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CostCenter"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="COST_CENTER"
+  AliasName="CostCenter"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Ccregion"
+    IsNotNull="true"
+    Precision="2"
+    ColumnName="CCREGION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="COST_CENTER"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CcsubLocation"
+    IsNotNull="true"
+    Precision="2"
+    ColumnName="CCSUB_LOCATION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="COST_CENTER"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Ccsubsidary"
+    IsNotNull="true"
+    Precision="5"
+    ColumnName="CCSUBSIDARY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="COST_CENTER"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="OldAnalysisCode"
+    Precision="15"
+    ColumnName="OLD_ANALYSIS_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="COST_CENTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Description"
+    Precision="35"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="COST_CENTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="35"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="SysC0015310"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0015310"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.CostCenter.Ccregion"/>
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.CostCenter.CcsubLocation"/>
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.CostCenter.Ccsubsidary"/>
+    </AttrArray>
+  </Key>
+</Entity>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+<JboProject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ERPSolFMSModel"
+  Version="12.1.3.10.47"
+  SeparateXMLFiles="true"
+  PackageName="erpsolfms.erpsolfmsmodel">
+  <DesignTime>
+    <Attr Name="_jprName" Value="../../../ERPSolFMSModel.jpr"/>
+    <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
+    <Attr Name="_NamedConnection" Value="ERPSolFMSConn"/>
+    <Attr Name="_appModuleNames0" Value="erpsolfms.erpsolfmsmodel.erpsolfmsam.ERPSolFMSAppModule"/>
+    <Attr Name="_domainNames0" Value="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.Type"/>
+  </DesignTime>
+  <Containee
+    Name="erpsolfmsam"
+    PackageName="erpsolfms.erpsolfmsmodel.erpsolfmsam"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="erpsolfmsassoc"
+    PackageName="erpsolfms.erpsolfmsmodel.erpsolfmsassoc"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AS" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="erpsolfmseo"
+    PackageName="erpsolfms.erpsolfmsmodel.erpsolfmseo"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+      <Attr Name="_AS" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="erpsolfmslink"
+    PackageName="erpsolfms.erpsolfmsmodel.erpsolfmslink"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VL" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="erpsolfmsqvo"
+    PackageName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+      <Attr Name="_DO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="erpsolfmsvo"
+    PackageName="erpsolfms.erpsolfmsmodel.erpsolfmsvo"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+      <Attr Name="_VL" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <AppContainee
+    Name="ERPSolGlobModel"
+    FullName="erpsolglob.erpsolglobmodel.ERPSolGlobModel"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="ERPSolGlobalModelLib.jar"/>
+    </DesignTime>
+  </AppContainee>
+</JboProject>
