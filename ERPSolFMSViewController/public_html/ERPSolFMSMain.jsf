@@ -5,14 +5,21 @@
         <af:form id="f1">
             <af:pageTemplate viewId="/ERPSolutionTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
                 <f:facet name="erptempmain">
-                    <af:panelBox text="Financial Management System" id="pb1" showDisclosure="false">
-                        <f:facet name="toolbar">
-                            <af:toolbar id="t1" flex="5">
+                    <af:decorativeBox id="db1" topHeight="30px">
+                        <f:facet name="center">
+                            <af:image id="i1" source="#{resource['images:imgFinance.png']}"/>
+                        </f:facet>
+                        <f:facet name="top">
+                            <af:panelGroupLayout id="pgl1" layout="horizontal" halign="end">
                                 <af:link id="l1" partialSubmit="true" icon="#{resource['images:imgHome.png']}"
                                          action="ACT-ERP-GOTO-MODLE-SELECTION"/>
-                            </af:toolbar>
+                            </af:panelGroupLayout>
                         </f:facet>
-                        <af:image id="i1" source="#{resource['images:imgFinance.png']}"/>
+                    </af:decorativeBox>
+                    <af:panelBox text="Financial Management System" id="pb1" showDisclosure="false" rendered="false">
+                        <f:facet name="toolbar">
+                            <af:toolbar id="t1" flex="5"/>
+                        </f:facet>
                     </af:panelBox>
                 </f:facet>
                 <f:facet name="erptempleft"/>
