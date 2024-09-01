@@ -189,7 +189,7 @@
   </Attribute>
   <Attribute
     Name="ModelNo"
-    Precision="20"
+    Precision="50"
     ColumnName="MODEL_NO"
     SQLType="VARCHAR"
     Type="java.lang.String"
